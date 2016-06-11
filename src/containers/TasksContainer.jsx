@@ -22,16 +22,26 @@ export default class TasksContainer extends React.Component {
     clearInterval(this.interval);
   }
 
+  // Dodajemy listener zdarzenia
+  onSortingChange = (newSorting) => {
+    //3/ Ustawiamy nowy stan sortowania...
+    this.setState({
+      sortBy: newSorting
+    });
+
+    // ...i sortujemy zadania.
+    this.handleSortTasks(this.state.tasks, newSorting);
+  };
+
   handleSortTasks (tasks, sortBy) {
-    // Posortujmy listę zadań
     tasks.sort((a, b) => a[sortBy] < b[sortBy]);
-    // I ustawmy nowy stan
-    this.setState({ tasks });
+    // Kopiujemy tablicę, żeby wymusić zmianę.
+    this.setState({ tasks: [...tasks] });
   }
 
   render () {
     return (
-      <TasksList {...this.state} />
+      <TasksList {...this.state} onSortingChange={this.onSortingChange} />
     );
   }
 
