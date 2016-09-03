@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Activity Tracker</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- 3/ Musimy pamiętać o tym, żeby załadować skrypty w odpowiedniej kolejności! -->
+    <script src="src/Model.js" defer></script>
+    <script src="src/View.js" defer></script>
+    <script src="src/index.js" defer></script>
   </head>
   <body>
     <h1>Your activities</h1>
-    <!-- Czyścimy aktywności w HTML. Zostawiamy tylko placeholder. -->
     <div class="activities">Loading...</div>
   </body>
 </html>
