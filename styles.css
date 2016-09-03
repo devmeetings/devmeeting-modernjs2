@@ -1,8 +1,12 @@
-/* 4/ Dokładamy border i padding do naszej aktywności */
-/* - Zwróć uwagę jak narysowany został border */
+/* 9/ Aby lepiej zwizualizować box model dokładamy tło, margines i wysokość. */
 .activity {
-  border: 2px solid #bbb;
-  padding: 10px;
+  border: 5px solid #b22;
+  padding: 20px;
+  margin: 20px;
+  height: 400px;
+  background: #53d;
+  /* height: 300px; */
+  /* box-sizing: border-box */
 }
 
 .activity__name {
