@@ -1,30 +1,34 @@
-import React from 'react';
+// Importujemy angulara
+import angular from 'angular';
 
-// Pojedynczy komponent w React to klasa rozszerzająca React.Component
-export class App extends React.Component {
+// Tworzymy nowy moduł
+const mod = angular.module('app', []);
 
-  //5/ W konstrukturze ustawiamy początkowy stan
-  constructor () {
-    super();
-    this.state = {
-      value: 5
-    };
+// Komponent jest po prostu klasą (logika)
+class App {
+
+  //3/ W konstruktorze ustawiamy początkowy stan
+  constructor() {
+    this.val = 5;
   }
 
-  //5/ Pomocnicza funkcja modyfikująca stan
+  //3/ W tej funkcji zmieniamy stan
   increment () {
-    this.setState({
-      value: this.state.value + 1
-    });
+    this.val += 1;
   }
 
-  //8/ Rendering całości
-  render () {
-    return (
-      <div>
-        <h1>Val: {this.state.value}</h1>
-        <button onClick={() => this.increment()}>+</button>
-      </div>
-    );
-  }
 }
+
+//2/ Wpinamy komponent do modułu
+mod.component('app', {
+  controller: App,
+  //6/ I definiujemy template
+  template: `
+    <div>
+      <h1>Val: {{ $ctrl.val }}</h1>
+      <button ng-click="$ctrl.increment()">+</button>
+    </div>
+  `
+});
+
+export default mod;

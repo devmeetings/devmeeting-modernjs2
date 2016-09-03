@@ -6,13 +6,11 @@
     <title>Activity Tracker</title>
   </head>
   <body>
-    <div class="app"></div>
-
+    <app></app>
     <script src="/cdn/systemjs/0.19.9/dist/system.js"></script>
     <script>
       System.config({ defaultJSExtensions: true, transpiler: false, map: {
-        'react': '/cdn/react/0.14.6/react.js',
-        'react-dom': '/cdn/react/0.14.6/react-dom.js',
+        'angular': '/cdn/angular.js/1.5.0/angular.js'
       }});
       System.import('src/index');
     </script>

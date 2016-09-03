@@ -1,9 +1,8 @@
-//2/ Importujemy biblioteki
-import React from 'react';
-import {render} from 'react-dom';
+// Importujemy angulara
+import angular from 'angular';
 
 // Importujemy komponent aplikacji...
-import {App} from './components/App';
+import App from './components/App';
 
-// ...i renderujemy
-render(<App />, document.querySelector('.app'));
+// Startujemy aplikację w angularze na całym dokumencie
+angular.bootstrap(document, [App.name]);
