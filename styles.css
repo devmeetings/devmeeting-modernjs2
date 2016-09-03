@@ -2,17 +2,9 @@ h1 {
   margin: 20px 10px 10px;
 }
 
-/* 11/ Ustawiamy flex na kontenerze. */
 .activities {
   display: flex;
-  /* Jak rozmieszczać elementy? */
-  flex-direction: row;
-  /* Czy powinny przenosić się do nowej lini? */
   flex-wrap: wrap;
-  /* Jak wykorzystać wolną przestrzeń? */
-  justify-content: space-between;
-  /* Jak wyrównać elementy w pionie */
-  align-items: center;
 }
 
 .activity {
@@ -21,15 +13,27 @@ h1 {
   margin: 0;
   margin-left: 10px;
   margin-top: 10px;
-  /* Używamy flex aby określić "wagę" elementu */
   flex: 1;
-  /* flex: 0 0 200px; */
+  max-width: 300px;
+  /* 2. I dodatkowo płynne przejście */
+  transition: box-shadow 0.25s ease-in;
+  /* transition: all 0.25s ease-in; */
 }
 
-/* 4/ Zobaczmy co się dzieje, kiedy elementy nie są równe. */
-.activity:nth-child(2) {
-  height: 400px;
-  /* flex: 2 0 auto; */
+/* 1. 4/ Dodajemy box-shadow po najechaniu */
+.activity:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  color: #4a4;
+}
+
+/* 3. 3/ Dodatkowo możem stylować inne elementy w określonych warunkach */
+.activity:hover .activity__button--paused {
+  opacity: 1.0;
+}
+
+.activity__img {
+  width: 100%;
+  height: auto;
 }
 
 .activity__name {
@@ -40,6 +44,11 @@ h1 {
 }
 
 .activity__button--paused {
+  cursor: pointer;
+  display: block;
+  width: 100%;
   padding: 5px 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
 }
 
