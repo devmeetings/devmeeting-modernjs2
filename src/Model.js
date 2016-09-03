@@ -7,6 +7,7 @@ const Model = {
       id: 3,
       alt: 'Bicycle',
       name: 'Cycling',
+      started: new Date().getTime(),
       timeSpent: 120
     },
     {

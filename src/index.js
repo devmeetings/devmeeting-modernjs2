@@ -1,6 +1,7 @@
 'use strict';
 
-//3/ W index.js uruchamiam całość.
-let $activities = document.querySelector('.activities');
-$activities.innerHTML = '';
-View.renderActivities(Model, $activities);
+// Inicjujemy model
+View.init(Model, document.querySelector('.activities'));
+
+// a potem renderujemy aktywności po raz pierwszy.
+View.renderActivities();

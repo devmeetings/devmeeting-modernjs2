@@ -1,13 +1,22 @@
 'use strict';
 
-// Globalna zmienna z widokiem
 const View = {
-  renderActivities (model, $target) {
-    const activities = model.getActivities();
+  _model: null,
+  _$target: null,
 
+  //4/ Inicjalizacja widoku (na razie singleton)
+  init (model, $target) {
+    View._model = model;
+    View._$target = $target;
+  },
+
+  renderActivities () {
+    const activities = View._model.getActivities();
+
+    View._$target.innerHTML = '';
     for (let idx in activities) {
       const $activity = View._renderActivity(activities[idx]);
-      $target.appendChild($activity);
+      View._$target.appendChild($activity);
     } 
   },
 
@@ -25,15 +34,29 @@ const View = {
 
     const $desc = document.createElement('p');
     $desc.className = 'activity__description';
-    $desc.innerHTML = 'Time spent: <strong>' + activity.timeSpent + ' min</strong>';
+    $desc.innerHTML = 'Time spent: <strong>' + activity.timeSpent.toFixed(1) + ' min</strong>';
 
     const $button = document.createElement('button');
     $button.className = 'activity__button--paused';
-    $button.innerHTML = '&#9654; Start';
+    $button.innerHTML = activity.started ? '&#9646;&#9646 Pause' : '&#9654; Start';
 
+    //17/ Na kliknięcie przycisku
     $button.addEventListener('click', function () {
-      alert('Rozpoczynam trackowanie: ' + activity.name);
-      console.log(activity);
+      //7/ Jeśli aktywność nie jest trackowana
+      if (!activity.started) {
+        // Zapisz czas rozpoczęcia
+        activity.started = new Date().getTime();
+        // Przerenderuj widok
+        View.renderActivities();
+        return;
+      }
+
+      //3/ W przeciwnym razie oblicz ile spędzono nad aktywnością
+      const timeSpent = (new Date().getTime() - activity.started) / 1000 / 60;
+      activity.timeSpent += timeSpent;
+      activity.started = false;
+      // i przerenderuj widok
+      View.renderActivities();
     });
 
     const $activity = document.createElement('div');
