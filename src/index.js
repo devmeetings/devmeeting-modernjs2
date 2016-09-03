@@ -1,18 +1,23 @@
 'use strict';
 
-//7/ Stwórzmy obiekt, który będzie witał osobę.
 const Greeter = {
   who: 'Tomasz',
   greet () {
-    // Spróbujmy zmienić Greeter na this
-    return 'Hello ' + Greeter.who;
+    return 'Hello ' + this.who;
   }
 }
 
-// Uruchamiamy greetera.
-const result = Greeter.greet();
+//3/ Drugi greeter nie ma funkcji `greet`...
+const Greeter2 = {
+  who: 'Marek'
+};
 
-//3/ Wyświetlmy wynik w DOM
+// ..ale możemy mu wstawić.
+Greeter2.greet = Greeter.greet;
+
+// Uruchamiamy drugiego greetera.
+const result = Greeter2.greet();
+
 const $greet = document.querySelector('.greeter');
 $greet.innerHTML = result;
 console.log(result);
