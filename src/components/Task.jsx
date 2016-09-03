@@ -1,4 +1,5 @@
-import React from 'react';
+// Importujemy `PropTypes`...
+import React, { PropTypes } from 'react';
 
 export default function Task (props) {
   const { task, now } = props;
@@ -14,3 +15,15 @@ export default function Task (props) {
     </div>   
   );
 }
+
+//10/ ...i definiujemy wymagane typy.
+Task.propTypes = {
+  now: PropTypes.number.isRequired,
+  // Definiujemy jak ma wyglądać obiek zadania
+  task: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    started: PropTypes.number.isRequired,
+    // To pole jest opcjonalne:
+    finished: PropTypes.number
+  }).isRequired
+};

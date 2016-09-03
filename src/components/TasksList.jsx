@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Task from './Task';
+import SortingButtons from './SortingButtons';
 
 export default function TasksList ({ now, tasks, sortBy, search, onSortingChange, onSearchingChange }) {
   return (
@@ -17,7 +18,6 @@ export default function TasksList ({ now, tasks, sortBy, search, onSortingChange
   );
 }
 
-//12/ Wyświetlamy komponent do filtrowania.
 export function Filtering({ search, onSearchingChange }) {
   return (
     <div>
@@ -30,17 +30,3 @@ export function Filtering({ search, onSearchingChange }) {
     </div>
   );
 }
-
-export function SortingButtons ({ sortBy, onSortingChange }) {
-  return (
-    <div>
-      <button disabled={sortBy === 'name'} onClick={e => onSortingChange('name')}>
-        Sort by Name
-      </button>
-      <button disabled={sortBy === 'started'} onClick={e => onSortingChange('started')}>
-        Sort by Start Time
-      </button>
-    </div>
-  );
-}
-
