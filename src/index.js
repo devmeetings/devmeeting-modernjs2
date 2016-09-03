@@ -1,21 +1,28 @@
 'use strict';
 
-//9/ Stwórzmy sobie funkcję, która przypisuje coś do this.
+//3/ Greeter nie ma teraz funkcji greet
 function Greeter(who) {
   this.who = who;
-  this.greet = function () {
-    return `Hello ${this.who}`;
-  };
 };
 
-//2/ Stwórzmy dwie instancje.
+//3/ Tworzymy funkcję niezależnie i korzystamy z this
+function greet() {
+  return `Hello ${this.who}`;
+}
+
 const greeter1 = new Greeter('Tomasz');
 const greeter2 = new Greeter('Marek');
 
-// I wywołajmy je.
-const result = greeter1.greet() + ' ' + greeter2.greet();
+// Wywołajmy funkcję `greet` w kontekście obiektu `greeter1`
+let result = greet.call(greeter1);
 
-//  `new` tworzy nowy obiekt, i wywołuje
-//- funkcję `Greeter` w kontekście tego obiektu.
+// Możemy też użyć apply
+result += ' ' + greet.apply(greeter2);
+
+// bind utworzy nową funkcje, która ma związany kontekst
+const greetMe = greet.bind({ who: 'Anonymous' });
+
+// Możemy ją potem wywołac "bez kontekstu"
+result += ' ' + greetMe();
 
 document.querySelector('.greeter').innerHTML = result;
