@@ -1,16 +1,10 @@
 'use strict';
 
-//14/ Klasa bazowa z metodą pomocniczą do tworzenia elementów.
 class BaseView {
-  //16/ Tworzy element na podstawie selektora i zawartości
   $el (selector, content) {
-    // Selector postaci `div.class` rozbity jest na dwie zmienne.
     const [elem, className] = selector.split('.');
-    // Jeżeli nie ma nic przed kropką to zakładamy diva
     const $el = document.createElement(elem || 'div');
-    // Może być sam element, więc pomijamy klasę
     $el.className = className || '';
-    // Content też jest opcjonalny.
     $el.innerHTML = content || '';
     return $el;
   }
@@ -23,7 +17,6 @@ class View extends BaseView {
     this._$target = $target;
   }
 
-  //7/ Korzystamy z `map` aby wyrenderować elementy
   renderActivities () {
     this._$target.innerHTML = '';
 
@@ -65,10 +58,11 @@ class View extends BaseView {
       this.renderActivities();
     });
 
-    //5/ Korzystamy z reduce, aby stworzyć element i dodać do niego wszystkie dzieci.
     return [$img, $title, $desc, $button].reduce(($parent, $el) => {
       $parent.appendChild($el);
       return $parent;
     }, this.$el('div.activity'));
   }
 }
+
+window.View = View;

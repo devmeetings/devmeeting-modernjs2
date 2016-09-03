@@ -1,3 +1,4 @@
+/* globals model, View */
 'use strict';
 
 // Inicjujemy model
