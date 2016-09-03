@@ -1,3 +1,6 @@
+// Tryb strict
+'use strict';
+
 var activities = [
   {
     id: 3,
@@ -19,12 +22,20 @@ var activities = [
   }
 ];
 
+// Co dzieje się jak odwołamy się do zmiennej, która nie istnieje?
+// console.log(activity2);
+
 var $activities = document.querySelector('.activities');
 $activities.innerHTML = '';
-
 for (var idx in activities) {
   var activity = activities[idx];
+  var $activity = activityView(activity); 
+  $activities.appendChild($activity);
+}
 
+console.log(activity);
+
+function activityView(activity) {
   var $img = document.createElement('img');
   $img.className = 'activity__img';
   $img.height = 250;
@@ -44,8 +55,6 @@ for (var idx in activities) {
   $button.className = 'activity__button--paused';
   $button.innerHTML = '&#9654; Start';
 
-  //5/ Tworzymy anonimową funkcję, która obsłuży zdarzenie `click`.
-  //-- Sprawdź czy wyświetlają się dobre wartości.
   $button.addEventListener('click', function () {
     alert('Rozpoczynam trackowanie: ' + activity.name);
     console.log(activity);
@@ -57,6 +66,6 @@ for (var idx in activities) {
   $activity.appendChild($title);
   $activity.appendChild($desc);
   $activity.appendChild($button);
-  
-  $activities.appendChild($activity);
+
+  return $activity;
 }
