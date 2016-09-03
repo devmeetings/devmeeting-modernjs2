@@ -1,3 +1,11 @@
+.color {
+  color: #d44;
+}
+
+.shadow {
+  text-shadow: 2px 3px 0 rgba(150,50,50,0.9);
+}
+
 :root, html, body {
   font-size: 14px;
 }
