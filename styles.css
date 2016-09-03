@@ -2,14 +2,21 @@ h1 {
   margin: 20px 10px 10px;
 }
 
+/* 3/ Centrujemy tekst w kontenerze */
+.activities {
+  text-align: center;
+}
+
 .activity {
   border: 1px solid #bbb;
   padding: 10px;
   margin: 0;
   margin-left: 10px;
   margin-top: 10px;
-  /* Dokładamy float: left */
-  float: left;
+  /* Musimy zresetować text-align */
+  text-align: left;
+  /* I dodać display */
+  display: inline-block;
 }
 
 /* 3/ Zobaczmy co się dzieje, kiedy elementy nie są równe. */
