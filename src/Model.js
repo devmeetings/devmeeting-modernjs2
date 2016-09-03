@@ -1,5 +1,3 @@
-'use strict';
-
 window.model = (() => {
   class Model {
     constructor (activities) {

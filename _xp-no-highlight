@@ -1,3 +1,4 @@
 styles/normalize.css
 styles/styles.css
 node_modules/normalize.css/normalize.css
+src/index.platform.js

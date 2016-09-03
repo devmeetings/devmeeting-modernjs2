@@ -1,5 +1,3 @@
-'use strict';
-
 class BaseView {
   $el (selector, content) {
     const [elem, className] = selector.split('.');

@@ -4,15 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Activity Tracker</title>
-    <!-- Uaktualniamy ścieżkę do normalize.css -->
-    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="src/Model.js" defer></script>
-    <script src="src/View.js" defer></script>
-    <script src="src/index.js" defer></script>
+    <!-- Usuwamy wszystkie importy. -->
+    <!---JS załadowany zostanie przez bibliotekę, a CSS zaimportujemy z poziomu JS -->
   </head>
   <body>
     <h1>Your activities</h1>
     <div class="activities">Loading...</div>
+
+    <!-- 5/ Na platformie potrzebujemy innego sposobu ładowania. -->
+    <script src="/cdn/systemjs/0.19.9/dist/system.js"></script>
+    <script>
+      System.config({ defaultJSExtensions: true, transpiler: false, map: {
+        'css': '/cdn/systemjs/plugin-css/css-0.1.20.js',
+        'normalize.css': 'node_modules/normalize.css/normalize.css'
+      }});
+      System.import('src/index.platform');
+    </script>
   </body>
 </html>
