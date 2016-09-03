@@ -63,4 +63,5 @@ class View extends BaseView {
   }
 }
 
-window.View = View;
+// Podobnie w widoku.
+module.exports = View;
