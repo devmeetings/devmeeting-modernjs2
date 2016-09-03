@@ -1,5 +1,6 @@
-// Importujemy `PropTypes`...
 import React, { PropTypes } from 'react';
+// Importujemy paczkę
+import classNames from 'classnames';
 
 export default function Task (props) {
   const { task, now } = props;
@@ -8,22 +9,24 @@ export default function Task (props) {
   const time = ((task.finished || now) - task.started) / 1000 / 60;
   const name = task.name; 
 
+  //3/ Definujemy klasy i warunki, kiedy powinny być dodane
+  const classes = classNames('task', {
+    active: isActive
+  });
+
   return (
-    <div className={`task ${isActive ? 'active' : ''}`}>
+    <div className={classes}>
       <span>{name} </span>
       <span>{time.toFixed(1)} min</span>
     </div>   
   );
 }
 
-//10/ ...i definiujemy wymagane typy.
 Task.propTypes = {
   now: PropTypes.number.isRequired,
-  // Definiujemy jak ma wyglądać obiek zadania
   task: PropTypes.shape({
     name: PropTypes.string.isRequired,
     started: PropTypes.number.isRequired,
-    // To pole jest opcjonalne:
     finished: PropTypes.number
   }).isRequired
 };
