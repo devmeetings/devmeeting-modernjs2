@@ -9,7 +9,7 @@ class BaseView {
 }
 
 // Eksportować można dowolne deklaracje (zmienna, klasa, funkcja)
-export default class View extends BaseView {
+export class View extends BaseView {
   constructor (model, $target) {
     super();
     this._model = model;

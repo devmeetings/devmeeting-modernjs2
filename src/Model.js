@@ -1,4 +1,5 @@
-class Model {
+// Można eksportować zarówno domyślny eksport jak i poszczególne klasy.
+export class Model {
   constructor (activities) {
     this._activities = activities;
   }
@@ -8,7 +9,6 @@ class Model {
   }
 }
 
-// A w ten sposób eksportujemy
 export default new Model([
   {
     id: 3,
