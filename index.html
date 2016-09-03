@@ -6,16 +6,14 @@
     <title>Activity Tracker</title>
   </head>
   <body>
-    <h1>Your activities</h1>
-    <div class="activities">Loading...</div>
+    <div class="app"></div>
 
     <script src="/cdn/systemjs/0.19.9/dist/system.js"></script>
     <script>
       System.config({ defaultJSExtensions: true, transpiler: false, map: {
         'css': '/cdn/systemjs/plugin-css/css-0.1.20.js',
-        'normalize.css': 'node_modules/normalize.css/normalize.css'
       }});
-      System.import('src/index.platform');
+      System.import('src/index');
     </script>
   </body>
 </html>

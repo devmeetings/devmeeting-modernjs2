@@ -1,10 +1,6 @@
-require('normalize.css');
-require('../styles/styles.css');
 
-import model from './Model';
-import {Activities} from './Activities/Activities';
+// Importujemy komponent aplikacji...
+import {App} from './components/App';
 
-document.querySelector('.activities').innerHTML = '';
-document.querySelector('.activities').appendChild(
-  new Activities(model).render()
-);
+// ...i renderujemy
+document.querySelector('.app').appendChild(new App().render());
