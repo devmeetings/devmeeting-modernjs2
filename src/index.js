@@ -13,13 +13,12 @@ class View {
   }
 
   render (tasks) {
-    tasks
-      // Weź tylko te zadania, które mają więcej niż 3 znaki
+    //5/ Przypiszmy wszystkie zadania jako innerHTML
+    this.$el.innerHTML = tasks
       .filter(task => task.length > 3)
-      // Stwórz z nich elementy drzewa DOM
       .map(task => this.renderTask(task))
-      // I wpisz do `this.$el`
-      .map($task => this.$el.appendChild($task))
+      // Konkatenujemy wszystkie zadania razem zaczynając od pustego stringa
+      .reduce((memo, $task) => memo + $task.outerHTML, '');
   }
 }
 
