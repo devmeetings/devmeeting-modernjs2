@@ -1,4 +1,5 @@
-'use strict';
+// 3. Zachowanie tego kodu jest zależne trybu strict
+//- 'use strict';
 
 const Greeter = {
   who: 'Tomasz',
@@ -7,16 +8,11 @@ const Greeter = {
   }
 }
 
-//3/ Drugi greeter nie ma funkcji `greet`...
-const Greeter2 = {
-  who: 'Marek'
-};
+// 1. Zapisujemy funkcję do zmiennej...
+const justGreet = Greeter.greet;
 
-// ..ale możemy mu wstawić.
-Greeter2.greet = Greeter.greet;
-
-// Uruchamiamy drugiego greetera.
-const result = Greeter2.greet();
+// 2. ... i wywołujemy - nie ma nic przed kropką!
+const result = justGreet();
 
 const $greet = document.querySelector('.greeter');
 $greet.innerHTML = result;
