@@ -1,4 +1,3 @@
-//20/ Mamy wiele aktywności w tablicy (literał [<item>, <item>])
 var activities = [
   {
     id: 3,
@@ -20,14 +19,9 @@ var activities = [
   }
 ];
 
-// Wypiszmy sobie tablicę na konsolę - tam też będziemy debugować.
-console.table(activities);
-
-//2/ Wyciągamy i czyścimy kontener poza pętlą
 var $activities = document.querySelector('.activities');
 $activities.innerHTML = '';
 
-//2/ Możemy przeiterować po tablicy i wyświetlić aktywności
 for (var idx in activities) {
   var activity = activities[idx];
 
@@ -50,6 +44,13 @@ for (var idx in activities) {
   $button.className = 'activity__button--paused';
   $button.innerHTML = '&#9654; Start';
 
+  //5/ Tworzymy anonimową funkcję, która obsłuży zdarzenie `click`.
+  //-- Sprawdź czy wyświetlają się dobre wartości.
+  $button.addEventListener('click', function () {
+    alert('Rozpoczynam trackowanie: ' + activity.name);
+    console.log(activity);
+  });
+
   var $activity = document.createElement('div');
   $activity.className = 'activity';
   $activity.appendChild($img);
@@ -57,6 +58,5 @@ for (var idx in activities) {
   $activity.appendChild($desc);
   $activity.appendChild($button);
   
-  // Na końcu dodajemy do kontenera
   $activities.appendChild($activity);
 }
