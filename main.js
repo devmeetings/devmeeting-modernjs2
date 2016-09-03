@@ -1,7 +1,7 @@
-// Tryb strict
 'use strict';
 
-var activities = [
+// Możemy zadeklarować stałą (stała referencja, wciąż mutowalna - odpowiednik final z Javy)
+const activities = [
   {
     id: 3,
     alt: 'Bicycle',
@@ -22,36 +22,35 @@ var activities = [
   }
 ];
 
-// Co dzieje się jak odwołamy się do zmiennej, która nie istnieje?
-// console.log(activity2);
-
-var $activities = document.querySelector('.activities');
+// Lub zmienną z zasięgiem blokowym (a nie funkcyjnym)
+let $activities = document.querySelector('.activities');
 $activities.innerHTML = '';
-for (var idx in activities) {
-  var activity = activities[idx];
-  var $activity = activityView(activity); 
+for (let idx in activities) {
+  let activity = activities[idx];
+  let $activity = activityView(activity); 
   $activities.appendChild($activity);
 }
 
+// Czy ta zmienna powinna być tutaj dostępna?
 console.log(activity);
 
 function activityView(activity) {
-  var $img = document.createElement('img');
+  const $img = document.createElement('img');
   $img.className = 'activity__img';
   $img.height = 250;
   $img.width = 250;
   $img.alt = activity.alt;
   $img.src = 'https://xplatform.org/ext/lorempixel/250/250/sports/' + activity.id;
 
-  var $title = document.createElement('h3');
+  const $title = document.createElement('h3');
   $title.className = 'activity__name';
   $title.textContent = activity['name'];
 
-  var $desc = document.createElement('p');
+  const $desc = document.createElement('p');
   $desc.className = 'activity__description';
   $desc.innerHTML = 'Time spent: <strong>' + activity.timeSpent + ' min</strong>';
 
-  var $button = document.createElement('button');
+  const $button = document.createElement('button');
   $button.className = 'activity__button--paused';
   $button.innerHTML = '&#9654; Start';
 
@@ -60,7 +59,7 @@ function activityView(activity) {
     console.log(activity);
   });
 
-  var $activity = document.createElement('div');
+  const $activity = document.createElement('div');
   $activity.className = 'activity';
   $activity.appendChild($img);
   $activity.appendChild($title);
