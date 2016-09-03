@@ -1,10 +1,16 @@
 'use strict';
 
-function Greeter(who) {
+function Greeter (who) {
   this.who = who;
-  this.greet = function () {
+}
+
+//7/ Prototype to wspólna część wszystkich instancji
+Greeter.prototype = {
+  who: null,
+
+  greet () {
     return `Hello ${this.who}`;
-  };
+  }
 };
 
 const greeter1 = new Greeter('Tomasz');
