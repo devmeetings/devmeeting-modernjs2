@@ -1,22 +1,28 @@
 'use strict';
 
-//4/ Tworzymy klasę bazową Animal
-function Animal() {}
-Animal.prototype.sayName = function () {
-  return this.name;
-};
-
-//4/ Klasa Psa (każdy pies ma wspólnego przodka)
-function Dog(name) {
-  this.name = name;
-};
-Dog.prototype = new Animal();
-
-//4/ Klasa Kota (każdy kot ma wspólnego przodka)
-function Cat(name) {
-  this.name = name;
+//5/ Tworzymy klasę bazową Animal
+class Animal {
+  sayName () {
+    return this.name;
+  }
 }
-Cat.prototype = new Animal();
+
+//6/ Standardowe dziedziczenie 
+class Dog extends Animal {
+  constructor (name) {
+    super();
+    this.name = name;
+  }
+}
+
+//6/ Klasa Kota też dziedziczy po Animal
+class Cat extends Animal {
+  constructor(name) {
+    super();
+    console.log(this);
+    this.name = name;
+  }
+}
 
 //4/ Stwórzmy instancję kota i psa
 const cat1 = new Cat('Tomek');
