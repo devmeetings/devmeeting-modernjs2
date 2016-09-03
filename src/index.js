@@ -13,12 +13,13 @@ class View {
   }
 
   render (tasks) {
-    //5/ Zamiast iterować w pętli używamy `map`
     tasks
-      .map(function (task) {
-        return this.renderTask(task);
-      }, this)
-      .map($task => this.$el.appendChild($task));
+      // Weź tylko te zadania, które mają więcej niż 3 znaki
+      .filter(task => task.length > 3)
+      // Stwórz z nich elementy drzewa DOM
+      .map(task => this.renderTask(task))
+      // I wpisz do `this.$el`
+      .map($task => this.$el.appendChild($task))
   }
 }
 
