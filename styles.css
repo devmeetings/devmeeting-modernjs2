@@ -1,5 +1,15 @@
+/* 7/ Jednostka rem wyraża wartość relatywną do głównego elementu */
+:root, html, body {
+  font-size: 13px;
+  /*- font-size: 20px; */
+  /*- font-size: 1.5vw; */
+  /*- font-size: 1.5vh; */
+  /*- font-size: 1.5vmin; */
+}
+
 h1 {
-  margin: 20px 10px 10px;
+  font-size: 2.3rem;
+  margin: 1rem .5rem .5rem;
 }
 
 .activities {
@@ -9,26 +19,17 @@ h1 {
 
 .activity {
   border: 1px solid #bbb;
-  padding: 10px;
+  padding: 1rem;
   margin: 0;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 1rem;
+  margin-top: 1rem;
   flex: 1;
-  max-width: 300px;
-  /* 2. I dodatkowo płynne przejście */
+  max-width: 20rem;
   transition: box-shadow 0.25s ease-in;
-  /* transition: all 0.25s ease-in; */
 }
 
-/* 1. 4/ Dodajemy box-shadow po najechaniu */
 .activity:hover {
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  color: #4a4;
-}
-
-/* 3. 3/ Dodatkowo możem stylować inne elementy w określonych warunkach */
-.activity:hover .activity__button--paused {
-  opacity: 1.0;
 }
 
 .activity__img {
@@ -37,10 +38,11 @@ h1 {
 }
 
 .activity__name {
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 1.7rem;
+  line-height: 1.8rem;
   font-weight: 300;
   margin: 0;
+  margin-top: .5rem;
 }
 
 .activity__button--paused {
@@ -48,7 +50,5 @@ h1 {
   display: block;
   width: 100%;
   padding: 5px 10px;
-  opacity: 0;
-  transition: opacity 0.25s ease-in;
 }
 
