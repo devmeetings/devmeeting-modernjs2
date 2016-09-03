@@ -1,40 +1,30 @@
-// Pojedynczy komponent to klasa
-export class App {
+import React from 'react';
+
+// Pojedynczy komponent w React to klasa rozszerzająca React.Component
+export class App extends React.Component {
 
   //5/ W konstrukturze ustawiamy początkowy stan
   constructor () {
+    super();
     this.state = {
       value: 5
     };
   }
 
-  //3/ Pomocnicza funkcja modyfikująca stan
+  //5/ Pomocnicza funkcja modyfikująca stan
   increment () {
-    this.state.value += 1;
-  }
-
-  //3/ Re-renderowanie polega na zastąpieniu elementu.
-  rerender ($old) {
-    $old.parentNode.replaceChild(this.render(), $old);
-  }
-
-  //18/ Rendering całości
-  render () {
-    const $div = document.createElement('div');
-    const $h1 = document.createElement('h1');
-    const $button = document.createElement('button');
-
-    $h1.innerHTML = `Val: ${this.state.value}`;
-    $button.innerHTML = '+';
-
-    //4/ Po kliknięciu przycisku modyfikujemy stan i re-renderujemy.
-    $button.addEventListener('click', () => {
-      this.increment();
-      this.rerender($div);
+    this.setState({
+      value: this.state.value + 1
     });
+  }
 
-    $div.appendChild($h1);
-    $div.appendChild($button);
-    return $div;
+  //8/ Rendering całości
+  render () {
+    return (
+      <div>
+        <h1>Val: {this.state.value}</h1>
+        <button onClick={() => this.increment()}>+</button>
+      </div>
+    );
   }
 }
