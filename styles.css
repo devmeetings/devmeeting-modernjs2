@@ -1,17 +1,18 @@
-/* 3/ Możemy stylować elementy i zmieniać ich własności */
-figure {
-  margin: 0;
+/* 4/ Dokładamy border i padding do naszej aktywności */
+/* - Zwróć uwagę jak narysowany został border */
+.activity {
+  border: 2px solid #bbb;
+  padding: 10px;
 }
 
-/* 5/ Selektory tego typu pozwalają ostylować figcaption, ale tylko wewnątrz figure */
-figure figcaption {
+.activity__name {
   font-size: 24px;
   line-height: 26px;
   font-weight: 300;
+  margin: 0;
 }
 
-/* 3/ Padding określa wolne miejsce wewnątrz elementu (między contentem i ramką) */
-button {
+.activity__button--paused {
   padding: 5px 10px;
 }
 

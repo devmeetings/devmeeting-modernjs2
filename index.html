@@ -4,20 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Activity Tracker</title>
-    <!--2/ Linkujemy dodatkowy skrypt. -->
-    <!---  Można też skorzystać z CDN, np.: https://cdnjs.com/libraries/normalize -->
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>Your activities</h1>
-    <div>
-      <figure>
-        <img src="https://xplatform.org/ext/lorempixel/250/250/sports/3/" alt="Bicycle">
-        <figcaption>Cycling</figcaption>
-      </figure>
-      <p>Time spent: <strong>10 min</strong></p>
-      <button>&#9654; Start</button>
+
+    <!-- Pojedynczej aktywności nadajemy klasę `activity` (BLOCK) -->
+    <div class="activity">
+      <!-- 4/ Warto dodać rozmiary obrazka, aby zapobiec "content jumping" -->
+      <img
+        class="activity__img"
+        width="250"
+        height="250"
+        alt="Bicycle"
+        src="https://xplatform.org/ext/lorempixel/250/250/sports/3/">
+
+      <!-- 3/ Nazwa aktywności - ELEMENT -->
+      <h3 class="activity__name">
+        Cycling
+      </h3>
+
+      <p class="activity__description">
+        Time spent: <strong>10 min</strong>
+      </p>
+
+      <!-- A tutaj używamy dodatkowo modyfikatora -->
+      <button class="activity__button--paused">
+        &#9654; Start
+      </button>
     </div>
+
   </body>
 </html>
