@@ -8,8 +8,8 @@ class Model {
   }
 }
 
-// Korzystamy z `module.exports` aby wyeksportować coś z modułu.
-module.exports = new Model([
+// A w ten sposób eksportujemy
+export default new Model([
   {
     id: 3,
     alt: 'Bicycle',

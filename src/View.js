@@ -1,14 +1,15 @@
 class BaseView {
   $el (selector, content) {
     const [elem, className] = selector.split('.');
-    const $el = document.createElement(elem || 'div');
-    $el.className = className || '';
-    $el.innerHTML = content || '';
-    return $el;
+    const $elem = document.createElement(elem || 'div');
+    $elem.className = className || '';
+    $elem.innerHTML = content || '';
+    return $elem;
   }
 }
 
-class View extends BaseView {
+// Eksportować można dowolne deklaracje (zmienna, klasa, funkcja)
+export default class View extends BaseView {
   constructor (model, $target) {
     super();
     this._model = model;
@@ -62,6 +63,3 @@ class View extends BaseView {
     }, this.$el('div.activity'));
   }
 }
-
-// Podobnie w widoku.
-module.exports = View;

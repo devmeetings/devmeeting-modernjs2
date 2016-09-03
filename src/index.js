@@ -1,8 +1,10 @@
 require('normalize.css');
 require('../styles/styles.css');
 
-//2/ Ładujemy model i widok i przypisujemy wyeksportowane obiekty.
-const model = require('./Model');
-const View = require('./View');
+//4/ Tak wygląda import domyślny (default export):
+// const model = require('./Model');
+// const View = require('./View');
+import model from './Model';
+import View from './View';
 
 (new View(model, document.querySelector('.activities'))).renderActivities();
