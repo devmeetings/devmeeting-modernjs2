@@ -1,26 +1,39 @@
 'use strict';
 
-function Greeter (who) {
-  this.who = who;
-}
-
-//7/ Prototype to wspólna część wszystkich instancji
-Greeter.prototype = {
-  who: null,
-
-  greet () {
-    return `Hello ${this.who}`;
-  }
+//4/ Tworzymy klasę bazową Animal
+function Animal() {}
+Animal.prototype.sayName = function () {
+  return this.name;
 };
 
-const greeter1 = new Greeter('Tomasz');
-const greeter2 = new Greeter('Marek');
+//4/ Klasa Psa (każdy pies ma wspólnego przodka)
+function Dog(name) {
+  this.name = name;
+};
+Dog.prototype = new Animal();
 
-//2/ Zobaczmy jak obiekty wyglądają w konsoli
-console.dir(greeter1);
-console.dir(greeter2);
+//4/ Klasa Kota (każdy kot ma wspólnego przodka)
+function Cat(name) {
+  this.name = name;
+}
+Cat.prototype = new Animal();
 
-// I porównajmy funkcje greet.
-const result = 'Różne: ' + (greeter1.greet !== greeter2.greet);
+//4/ Stwórzmy instancję kota i psa
+const cat1 = new Cat('Tomek');
+const dog1 = new Dog('Marek');
+console.dir(cat1);
+console.dir(dog1);
 
+//11/ Sprawdźmy kilka własności
+const result = `
+  Cat's Name: ${cat1.sayName()}
+  Dog's Name: ${dog1.sayName()}
+
+  Is cat1 a Cat?: ${cat1 instanceof Cat}
+  Is dog1 a Dog?: ${dog1 instanceof Dog}
+  
+  Is cat1 an Animal?: ${cat1 instanceof Animal}
+
+  Is cat1 a Dog?: ${cat1 instanceof Dog}
+`;
 document.querySelector('.greeter').innerHTML = result;
