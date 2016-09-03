@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Defer</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="index.html" >
+        	<script id="index.html" highlight="6-14,32-38" type="application/octetstream" src="002/index.html"></script>
+	<script id="main.js" highlight="1-2" type="application/octetstream" src="002/main.js"></script>
+	<script id="main2.js" highlight="1-2" type="application/octetstream" src="002/main2.js"></script>
+	<script id="styles.css" highlight="32-38" type="application/octetstream" src="002/styles.css"></script>
+	<script id="normalize.css" type="application/octetstream" src="001/normalize.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview runner="html"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Deferring scripts</h1></header>
+            <details>
+  <p>Skrypty powinno umieszczać się w <code>HEAD</code>, prawda?</p>
+  <p>Jednak zanim skrypty się załadują i uruchomią nic nie będzie wyświetlone na stronie!</p>
+  <p>Jest kilka sposobów, aby temu zaradzić.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

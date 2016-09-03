@@ -1,0 +1,22 @@
+{
+  "name": "activity-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "__": "Dodajemy polecenie do lintowania",
+    "lint": "semistandard",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "tomusdrw",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^4.2.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.1.0",
+    "semistandard": "^8.0.0"
+  }
+}

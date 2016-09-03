@@ -1,0 +1,45 @@
+h1 {
+  margin: 20px 10px 10px;
+}
+
+/* 11/ Ustawiamy flex na kontenerze. */
+.activities {
+  display: flex;
+  /* Jak rozmieszczać elementy? */
+  flex-direction: row;
+  /* Czy powinny przenosić się do nowej lini? */
+  flex-wrap: wrap;
+  /* Jak wykorzystać wolną przestrzeń? */
+  justify-content: space-between;
+  /* Jak wyrównać elementy w pionie */
+  align-items: center;
+}
+
+.activity {
+  border: 1px solid #bbb;
+  padding: 10px;
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* Używamy flex aby określić "wagę" elementu */
+  flex: 1;
+  /* flex: 0 0 200px; */
+}
+
+/* 4/ Zobaczmy co się dzieje, kiedy elementy nie są równe. */
+.activity:nth-child(2) {
+  height: 400px;
+  /* flex: 2 0 auto; */
+}
+
+.activity__name {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.activity__button--paused {
+  padding: 5px 10px;
+}
+

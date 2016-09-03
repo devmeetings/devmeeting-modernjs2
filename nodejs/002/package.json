@@ -1,0 +1,22 @@
+{
+  "name": "activity-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "__3": "4/ Automatyzacja podstawowych poleceń. Warto zdefiniować start",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "tomusdrw",
+  "license": "MIT",
+  "__1": "3/ Zależności wymagane przez projekt.",
+  "dependencies": {
+    "normalize.css": "^4.2.0"
+  },
+  "__2": "3/ Zależności developerskie - podczas pracy z projektem.",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}

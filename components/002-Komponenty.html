@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Komponenty</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="src/Activities/Activities.css" tree>
+        	<script id="src/Activities/Activities.css" highlight="1-5" type="application/octetstream" src="002/src/Activities/Activities.css"></script>
+	<script id="src/Activities/Activities.js" highlight="1-18" type="application/octetstream" src="002/src/Activities/Activities.js"></script>
+	<script id="src/Activity/Activity.css" highlight="1-30" type="application/octetstream" src="002/src/Activity/Activity.css"></script>
+	<script id="src/Activity/Activity.js" highlight="1-57" type="application/octetstream" src="002/src/Activity/Activity.js"></script>
+	<script id="src/View.js" highlight="1-4,11-13" type="application/octetstream" src="002/src/View.js"></script>
+	<script id="src/index.js" highlight="2-8" type="application/octetstream" src="002/src/index.js"></script>
+	<script id="styles/styles.css" highlight="6-8" type="application/octetstream" src="002/styles/styles.css"></script>
+	<script id="console.sh" type="application/octetstream" src="001/console.sh"></script>
+	<script id="index.html" type="application/octetstream" src="001/index.html"></script>
+	<script id="package.json" type="application/octetstream" src="001/package.json"></script>
+	<script id="node_modules/normalize.css/normalize.css" type="application/octetstream" src="001/node_modules/normalize.css/normalize.css"></script>
+	<script id="src/Model.js" type="application/octetstream" src="001/src/Model.js"></script>
+	<script id="src/index.platform.js" type="application/octetstream" src="001/src/index.platform.js"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html-babel"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Komponentowa architektura</h1></header>
+            <details>
+  <p>Zależności między stylami i komponentem Task są zupełnie niejawne i opierają się na używaniu tych samych stringów w obu plikach.</p>
+
+  <p>Spróbujmy jakoś bardziej związać ze sobą te dwa pliki. Wydzielmy komponent Task wraz z kodem i stylami do osobnego pliku.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

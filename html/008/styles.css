@@ -1,0 +1,30 @@
+h1 {
+  margin: 20px 10px 10px;
+}
+
+.activity {
+  border: 1px solid #bbb;
+  padding: 10px;
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* Dokładamy float: left */
+  float: left;
+}
+
+/* 3/ Zobaczmy co się dzieje, kiedy elementy nie są równe. */
+.activity:nth-child(2) {
+  /* height: 400px; */
+}
+
+.activity__name {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.activity__button--paused {
+  padding: 5px 10px;
+}
+

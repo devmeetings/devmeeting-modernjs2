@@ -1,0 +1,17 @@
+/* 3/ Możemy stylować elementy i zmieniać ich własności */
+figure {
+  margin: 0;
+}
+
+/* 5/ Selektory tego typu pozwalają ostylować figcaption, ale tylko wewnątrz figure */
+figure figcaption {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+/* 3/ Padding określa wolne miejsce wewnątrz elementu (między contentem i ramką) */
+button {
+  padding: 5px 10px;
+}
+

@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>VanillaJS</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="index.html" >
+        	<script id="index.html" highlight="6-19" type="application/octetstream" src="003/index.html"></script>
+	<script id="package.json" highlight="4-9,12-17" type="application/octetstream" src="003/package.json"></script>
+	<script id="src/components/App.js" highlight="1-40" type="application/octetstream" src="003/src/components/App.js"></script>
+	<script id="src/index.js" highlight="1-6" type="application/octetstream" src="003/src/index.js"></script>
+	<script id="node_modules/normalize.css/normalize.css" type="application/octetstream" src="001/node_modules/normalize.css/normalize.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview runner="html-babel"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Komponentowa aplikacja w VanillaJS</h1></header>
+            <details>
+  <p>Od komponentów oczekujemy:</p>
+  <ul style="text-align: left">
+    <li>Izolacji - wygląda tak samo, nie zależy od innych, na dysku razem</li>
+    <li>Reużywalności - powinno się dać łatwo wykorzystać go ponownie</li>
+    <li>Kompozycji - tworzymy bardziej złożone komponenty z mniejszych</li>
+  </ul>
+  <p>Jak to realizujemy?</p>
+  <ul style="text-align: left">
+    <li>Komponentowa struktura katalogów</li>
+    <li>Parametry wejściowe (<code>inputs / properties</code>)</li>
+    <li>Eventy (<code>outputy</code>)</li>
+    <li>Proste / Wspólne API</li>
+    <li>Wewnętrzny stan</li>
+  </ul>
+  <p>Zobaczmy przykłady bardzo prostej aplikacji opartej o komponenty.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Exports</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="index.html" tree>
+        	<script id="index.html" highlight="4-14" type="application/octetstream" src="008/index.html"></script>
+	<script id="src/Model.js" highlight="1-5,9-14" type="application/octetstream" src="008/src/Model.js"></script>
+	<script id="src/View.js" highlight="9-15" type="application/octetstream" src="008/src/View.js"></script>
+	<script id="src/index.js" highlight="1-10" type="application/octetstream" src="008/src/index.js"></script>
+	<script id="src/index.platform.js" highlight="2-7" type="application/octetstream" src="008/src/index.platform.js"></script>
+	<script id="console.sh" type="application/octetstream" src="005/console.sh"></script>
+	<script id="package.json" type="application/octetstream" src="005/package.json"></script>
+	<script id="node_modules/normalize.css/normalize.css" type="application/octetstream" src="002/node_modules/normalize.css/normalize.css"></script>
+	<script id="styles/styles.css" type="application/octetstream" src="001/styles/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html-babel"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Non-default exports</h1></header>
+            <details>
+  <p>Oprócz domyślnego eksportu możemy wyeksportować wiele obiektów niezależnie.</p>
+  <p>W (niedalekiej) przyszłości dzięki temu wynikowa paczka będzie zawierała tylko ten kod, którego faktycznie używa.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

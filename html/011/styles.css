@@ -1,0 +1,54 @@
+h1 {
+  margin: 20px 10px 10px;
+}
+
+.activities {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity {
+  border: 1px solid #bbb;
+  padding: 10px;
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex: 1;
+  max-width: 300px;
+  /* 2. I dodatkowo płynne przejście */
+  transition: box-shadow 0.25s ease-in;
+  /* transition: all 0.25s ease-in; */
+}
+
+/* 1. 4/ Dodajemy box-shadow po najechaniu */
+.activity:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  color: #4a4;
+}
+
+/* 3. 3/ Dodatkowo możem stylować inne elementy w określonych warunkach */
+.activity:hover .activity__button--paused {
+  opacity: 1.0;
+}
+
+.activity__img {
+  width: 100%;
+  height: auto;
+}
+
+.activity__name {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.activity__button--paused {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+

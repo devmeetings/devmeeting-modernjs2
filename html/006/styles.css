@@ -1,0 +1,22 @@
+/* 9/ Aby lepiej zwizualizować box model dokładamy tło, margines i wysokość. */
+.activity {
+  border: 5px solid #b22;
+  padding: 20px;
+  margin: 20px;
+  height: 400px;
+  background: #53d;
+  /* height: 300px; */
+  /* box-sizing: border-box */
+}
+
+.activity__name {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.activity__button--paused {
+  padding: 5px 10px;
+}
+

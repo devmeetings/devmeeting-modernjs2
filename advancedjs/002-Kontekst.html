@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Kontekst</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="src/index.js" >
+        	<script id="src/index.js" highlight="1-23" type="application/octetstream" src="002/src/index.js"></script>
+	<script id="index.html" type="application/octetstream" src="001/index.html"></script>
+	<script id="styles/normalize.css" type="application/octetstream" src="001/styles/normalize.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview runner="html"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Rule of thumb: Kontekst to to, co przed kropką</h1></header>
+            <details>
+  <p>Wygląda na to, że <code>this</code> działa tak jak byśmy tego oczekiwali.</p>
+  <p>Ale obiekty w JS to nie są klasy - możemy skopiować funkcję do innego obiektu. Co wtedy?</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
