@@ -44,8 +44,8 @@ for (var idx in activities) {
   $button.className = 'activity__button--paused';
   $button.innerHTML = '&#9654; Start';
 
-  //5/ Tworzymy anonimową funkcję, która obsłuży zdarzenie `click`.
-  //-- Sprawdź czy wyświetlają się dobre wartości.
+  //5/ Tworzymy anonimową funkcję, która obsłuży zdarzenie `click`.
+  //-- Sprawdź czy wyświetlają się dobre wartości.
   $button.addEventListener('click', function () {
     alert('Rozpoczynam trackowanie: ' + activity.name);
     console.log(activity);
