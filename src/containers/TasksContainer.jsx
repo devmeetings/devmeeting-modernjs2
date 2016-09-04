@@ -1,21 +1,20 @@
 import React from 'react';
-// Importujemy komponent odpowiedzialny za renderowanie
 import TasksList from '../components/TasksList';
 
-//28/ Ten komponent odpowiada za zarządzanie stanem całej aplikacji.
 export default class TasksContainer extends React.Component {
 
   state = {
     now: 0,
-    tasks: []
+    tasks: [],
+    sortBy: 'name'
   };
 
   componentDidMount () {
     fetch('data/tasks.json')
       .then(res => res.json())
-      .then(tasks => this.setState({
-        tasks
-      }));
+      .then(tasks => {
+        this.handleSortTasks(tasks, this.state.sortBy);
+      });
 
     this.interval = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }
@@ -24,8 +23,14 @@ export default class TasksContainer extends React.Component {
     clearInterval(this.interval);
   }
 
+  handleSortTasks (tasks, sortBy) {
+    // Posortujmy listę zadań
+    tasks.sort((a, b) => a[sortBy] < b[sortBy]);
+    // I ustawmy nowy stan
+    this.setState({ tasks });
+  }
+
   render () {
-    //3/ Propsy możemy przekazać z użyciem operatora `spread`.
     return (
       <TasksList {...this.state} />
     );

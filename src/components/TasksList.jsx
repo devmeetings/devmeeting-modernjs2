@@ -2,8 +2,7 @@ import React from 'react';
 
 import Task from './Task';
 
-//12/ Tworzymy "głupi" komponent, ktory nie ma własnego stanu.
-export default function TasksList ({now, tasks}) {
+export default function TasksList ({now, tasks, sortBy}) {
   return (
     <div>
       <h1>Hello React!</h1>
@@ -12,6 +11,18 @@ export default function TasksList ({now, tasks}) {
           <Task task={task} now={now} key={idx} />
         )) 
       }
+      {/* Przekazujemy aktualne sortowanie niżej */}
+      <SortingButtons sortBy={sortBy} />
+    </div>
+  );
+}
+
+//8/ Pomocniczy komponent wyświetlający przyciski do sortowania.
+export function SortingButtons ({ sortBy }) {
+  return (
+    <div>
+      <button disabled={sortBy === 'name'}>Sort by Name</button>
+      <button disabled={sortBy === 'started'}>Sort by Start Time</button>
     </div>
   );
 }
