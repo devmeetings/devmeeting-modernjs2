@@ -8,13 +8,18 @@ export default class TasksData extends React.Component {
     onTasks: PropTypes.func.isRequired
   };
 
+  //3/ Komponent, który używa kontekstu musi to zadeklarować
+  static contextTypes = {
+    serverUrl: PropTypes.string.isRequired
+  };
+
   state = {
     allTasks: [],
   };
 
-  //10/ Podczas montowania pobieramy dane.
+  //2/ Wykorzystujemy parametr z kontekstu aby odwołać się do odpowiedniego URLa
   componentDidMount () {
-      fetch('data/tasks.json')
+      fetch(this.context.serverUrl)
       .then(res => res.json())
       .then(tasks => {
         this.setState({
@@ -25,7 +30,6 @@ export default class TasksData extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    //3/ Musimy się upewnić, że cokolwiek się zmieniło! React będzie wołał tę funkcję przy każdej potencjalnej zmianie.
     if (newProps.search !== this.props.search || newProps.sortBy !== this.props.sortBy) {
       this.handleSortingAndSearching(this.state.allTasks, newProps);
     }
@@ -41,11 +45,9 @@ export default class TasksData extends React.Component {
     });
     tasks.sort((a, b) => a[sortBy] < b[sortBy]);
 
-    // Zamiast ustawiać stan wołamy callback.
     this.props.onTasks(tasks);
   }
 
-  //3/ I nic nie renderujemy.
   render () {
     return null;
   }

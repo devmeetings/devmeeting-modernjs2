@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-// Importujemy paczkę
 import classNames from 'classnames';
 
 export default function Task (props) {
@@ -9,7 +8,6 @@ export default function Task (props) {
   const time = ((task.finished || now) - task.started) / 1000 / 60;
   const name = task.name; 
 
-  //3/ Definujemy klasy i warunki, kiedy powinny być dodane
   const classes = classNames('task', {
     active: isActive
   });
