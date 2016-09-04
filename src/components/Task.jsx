@@ -1,6 +1,5 @@
 import React from 'react';
 
-//14/ Wydzielamy pojedyncze zadanie do osobnego komponentu
 export default function Task (props) {
   const { task, now } = props;
 
