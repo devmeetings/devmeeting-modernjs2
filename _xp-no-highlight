@@ -1,2 +1,3 @@
 src/index.platform.jsx
 package.json
+data/tasks.json
