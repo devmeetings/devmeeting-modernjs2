@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Data Component</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="src/containers/TasksContainer.jsx" tree>
+        	<script id="src/containers/TasksContainer.jsx" highlight="1-17,19-41" type="application/octetstream" src="018/src/containers/TasksContainer.jsx"></script>
+	<script id="src/data/Tasks.jsx" highlight="1-54" type="application/octetstream" src="018/src/data/Tasks.jsx"></script>
+	<script id="config.js" type="application/octetstream" src="017/config.js"></script>
+	<script id="index.html" type="application/octetstream" src="002/index.html"></script>
+	<script id="package.json" type="application/octetstream" src="017/package.json"></script>
+	<script id="css/styles.css" type="application/octetstream" src="014/css/styles.css"></script>
+	<script id="data/tasks.json" type="application/octetstream" src="013/data/tasks.json"></script>
+	<script id="src/index.jsx" type="application/octetstream" src="004/src/index.jsx"></script>
+	<script id="src/index.platform.jsx" type="application/octetstream" src="001/src/index.platform.jsx"></script>
+	<script id="src/main.jsx" type="application/octetstream" src="012/src/main.jsx"></script>
+	<script id="src/components/SortingButtons.jsx" type="application/octetstream" src="016/src/components/SortingButtons.jsx"></script>
+	<script id="src/components/Task.jsx" type="application/octetstream" src="017/src/components/Task.jsx"></script>
+	<script id="src/components/TasksList.jsx" type="application/octetstream" src="016/src/components/TasksList.jsx"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html-babel"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Komponent zarządzający dostępem do danych</h1></header>
+            <details>
+  <p>Pobieranie, filtrowanie i sortowanie zadań są ze sobą ściśle związane.</p>
+  <p>Spróbujmy wydzielić komponent, który będzie zajmował się zarządzaniem tymi danymi.</p>
+  <p>Wykorzystamy dodatkowy hook z cyklu życia komponentu. Więcej: <a href="https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods">https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods</a></p>
+</details>
+
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

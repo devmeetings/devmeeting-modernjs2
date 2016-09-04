@@ -1,0 +1,18 @@
+html, body {
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*12/ Kilka styli dla zadań */
+.task {
+  font-size: 1.2rem;
+}
+
+.task.active {
+  font-size: 1.3rem;
+  background: rgba(139, 195, 74, 0.5);
+}
+
+.task span:nth-child(2) {
+  font-weight: 600;
+}

@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>React Way</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="config.js" tree>
+        	<script id="config.js" highlight="3-9" type="application/octetstream" src="003/config.js"></script>
+	<script id="package.json" highlight="13-20" type="application/octetstream" src="003/package.json"></script>
+	<script id="src/index.jsx" highlight="1-3" type="application/octetstream" src="003/src/index.jsx"></script>
+	<script id="src/main.jsx" highlight="1-19" type="application/octetstream" src="003/src/main.jsx"></script>
+	<script id="index.html" type="application/octetstream" src="002/index.html"></script>
+	<script id="css/styles.css" type="application/octetstream" src="001/css/styles.css"></script>
+	<script id="src/index.platform.jsx" type="application/octetstream" src="001/src/index.platform.jsx"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html-babel"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Pierwszy komponent w React</h1></header>
+            <details>
+  <p>Obecnie aplikacja jest całkiem czytelna, ale co dwie sekundy zastępujemy wszystkie elementy nowymi, pomimo że część z nich w ogóle się nie zmienia!</p>
+  <p>Dodatkowo powoduje to problem z zarządzaniem zaznaczeniem, focusem czy wartością wpisaną w input.</p>
+  <p>Aby rozwiązać ten problem musielibyśmy uaktualniać tylko tę część DOM, która się zmienia, ale wtedy kod straciłby na czytelności.</p>
+  <br />
+  <p>React proponuje inne rozwiązanie.</p>
+  <p>Musimy zainstalować odpowiednie zależności:</p>
+  <pre>
+  $ npm i react react-dom -S
+  </pre>
+</details>
+
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
