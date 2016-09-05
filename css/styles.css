@@ -16,3 +16,12 @@ html, body {
 .task span:nth-child(2) {
   font-weight: 600;
 }
+
+button {
+  margin: 1rem 0;
+  padding: .5rem;
+}
+
+button + button {
+  margin-left: 1rem;
+}
