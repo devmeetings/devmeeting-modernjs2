@@ -1,6 +1,7 @@
 import React from 'react';
 // Importujemy komponent odpowiedzialny za renderowanie
 import TasksList from '../components/TasksList';
+import tasks from '../data/tasks.json!';
 
 //28/ Ten komponent odpowiada za zarządzanie stanem całej aplikacji.
 export default class TasksContainer extends React.Component {
@@ -11,11 +12,9 @@ export default class TasksContainer extends React.Component {
   };
 
   componentDidMount () {
-    fetch('data/tasks.json')
-      .then(res => res.json())
-      .then(tasks => this.setState({
-        tasks
-      }));
+    setTimeout(() => {
+      this.setState({ tasks });
+    }, 500);
 
     this.interval = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }

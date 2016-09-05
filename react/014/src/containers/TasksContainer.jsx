@@ -1,5 +1,6 @@
 import React from 'react';
 import TasksList from '../components/TasksList';
+import tasks from '../../data/tasks.json!';
 
 export default class TasksContainer extends React.Component {
 
@@ -12,17 +13,16 @@ export default class TasksContainer extends React.Component {
   };
 
   componentDidMount () {
-    fetch('data/tasks.json')
-      .then(res => res.json())
-      .then(tasks => {
-        //3/ Musimy zapamiętać listę wszystkich zadań.
-        this.setState({
-          allTasks: tasks
-        });
-        //2/ Oraz ustawić przefiltrowaną i posortowana listę
-        const { sortBy, search } = this.state;
-        this.handleSortingAndSearching(tasks, sortBy, search);
+    setTimeout(() => {
+      //3/ Musimy zapamiętać listę wszystkich zadań.
+      this.setState({
+        allTasks: tasks
       });
+
+      //2/ Oraz ustawić przefiltrowaną i posortowana listę
+      const { sortBy, search } = this.state;
+      this.handleSortingAndSearching(tasks, sortBy, search);
+    }, 500);
 
     this.interval = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }

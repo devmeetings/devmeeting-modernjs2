@@ -1,5 +1,6 @@
 import React from 'react';
 import TasksList from '../components/TasksList';
+import tasks from '../../data/tasks.json!';
 
 export default class TasksContainer extends React.Component {
 
@@ -10,11 +11,9 @@ export default class TasksContainer extends React.Component {
   };
 
   componentDidMount () {
-    fetch('data/tasks.json')
-      .then(res => res.json())
-      .then(tasks => {
-        this.handleSortTasks(tasks, this.state.sortBy);
-      });
+    setTimeout(() => {
+      this.handleSortTasks(tasks, this.state.sortBy);
+    }, 500);
 
     this.interval = setInterval(() => this.setState({ now: Date.now() }), 1000);
   }

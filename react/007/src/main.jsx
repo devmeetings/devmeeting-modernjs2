@@ -1,6 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import tasks from '../data/tasks.json!';
+
 class Tasks extends React.Component {
 
   state = {
@@ -10,11 +12,9 @@ class Tasks extends React.Component {
 
   componentDidMount () {
     //5/ Pobieramy zadania na starcie
-    fetch('data/tasks.json')
-      .then(res => res.json())
-      .then(tasks => this.setState({
-        tasks
-      }));
+    setTimeout(() => {
+      this.setState({ tasks });
+    }, 500);
 
     // Musimy odświeżać aktualny czas...
     this.interval = setInterval(() => this.setState({ now: Date.now() }), 1000);

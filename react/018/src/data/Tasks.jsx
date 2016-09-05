@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import tasks from '../../data/tasks.json!';
+
 export default class TasksData extends React.Component {
 
   static propTypes = {
@@ -12,16 +14,15 @@ export default class TasksData extends React.Component {
     allTasks: [],
   };
 
-  //10/ Podczas montowania pobieramy dane.
+  //9/ Podczas montowania pobieramy dane.
   componentDidMount () {
-      fetch('data/tasks.json')
-      .then(res => res.json())
-      .then(tasks => {
-        this.setState({
-          allTasks: tasks
-        });
-        this.handleSortingAndSearching(tasks, this.props);
+    setTimeout(() => {
+      this.setState({
+        allTasks: tasks
       });
+
+      this.handleSortingAndSearching(tasks, this.props);
+    }, 500);
   }
 
   componentWillReceiveProps (newProps) {
