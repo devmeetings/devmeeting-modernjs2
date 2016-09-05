@@ -3,6 +3,8 @@ System.config({
   transpiler: false,
   map: {
     "css": "/cdn/systemjs/plugin-css/css-0.1.20.js",
-    "json": "/cdn/systemjs/plugin-json/json.js"
+    "json": "/cdn/systemjs/plugin-json/json.js",
+    "react": "/cdn/react/15.1.0/react.js",
+    "react-dom": "/cdn/react/15.1.0/react-dom.js"
   }
 });

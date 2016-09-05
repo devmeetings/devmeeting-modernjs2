@@ -1,23 +1,19 @@
-//11/ Definicja naszego komponentu
+// Importujemy React (potrzebne do przetwarzania JSX).
+import React from 'react';
+// React może być używany także poza przeglądarką, ale my potrzebujemy `react-dom`.
+import {render} from 'react-dom';
+
+//5/ Najprostszym komponentem jest po prostu funkcja.
 function App() {
-  // Aktualny stan
   const now = new Date().getTime();
-
-  //5/ Definicja widoku
-  return `<div>
-    <h1>Hello React!</h1>
-    <input type="text" placeholder="some input" />
-    <p>Now: ${now}</p>
-  </div>`;
+  return (
+    <div>
+      <h1>Hello React!</h1>
+      <input type='text' placeholder='some input' />
+      <p>Now: {now}</p>
+    </div>
+  );
 }
 
-//3/ Musimy re-renderować komponent co jakiś czas
-setInterval(() => {
-  render(App, document.querySelector('#app'));
-}, 2000);
-
-//3/ Pomocnicza wstawiająca komponent do drzewa DOM
-function render(component, $app) {
-  $app.innerHTML = component();
-}
-
+// Musimy określić gdzie wyrenderujemy nasz pierwszy komponent.
+render(<App />, document.querySelector('#app'));
