@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import tasks from '../../data/tasks.json';
-
 export default class TasksData extends React.Component {
 
   static propTypes = {
@@ -10,23 +8,28 @@ export default class TasksData extends React.Component {
     onTasks: PropTypes.func.isRequired
   };
 
+  //3/ Komponent, który używa kontekstu musi to zadeklarować
+  static contextTypes = {
+    serverUrl: PropTypes.string.isRequired
+  };
+
   state = {
     allTasks: [],
   };
 
-  //9/ Podczas montowania pobieramy dane.
+  //2/ Wykorzystujemy parametr z kontekstu aby odwołać się do odpowiedniego URLa
   componentDidMount () {
-    setTimeout(() => {
-      this.setState({
-        allTasks: tasks
+      fetch(this.context.serverUrl)
+      .then(res => res.json())
+      .then(tasks => {
+        this.setState({
+          allTasks: tasks
+        });
+        this.handleSortingAndSearching(tasks, this.props);
       });
-
-      this.handleSortingAndSearching(tasks, this.props);
-    }, 500);
   }
 
   componentWillReceiveProps (newProps) {
-    //3/ Musimy się upewnić, że cokolwiek się zmieniło! React będzie wołał tę funkcję przy każdej potencjalnej zmianie.
     if (newProps.search !== this.props.search || newProps.sortBy !== this.props.sortBy) {
       this.handleSortingAndSearching(this.state.allTasks, newProps);
     }
@@ -42,11 +45,9 @@ export default class TasksData extends React.Component {
     });
     tasks.sort((a, b) => a[sortBy] < b[sortBy]);
 
-    // Zamiast ustawiać stan wołamy callback.
     this.props.onTasks(tasks);
   }
 
-  //3/ I nic nie renderujemy.
   render () {
     return null;
   }
