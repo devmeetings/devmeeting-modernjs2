@@ -1,0 +1,63 @@
+<html xp-run-server-url="https://xpla.org"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Objects Shorthand</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="src/index.js">
+	<script id="src/index.js" type="application/octetstream" highlight>
+const a = 'shorthand for objects';
+const b = 'shorthand';
+
+//4/ Skrócona forma tworzenia obiektów
+const result = {
+    a: a,
+    [b]: b,
+    b
+};
+
+
+document.querySelector('.result').innerHTML = JSON.stringify(result, null, 2);
+</script>
+	<script id="index.html" type="application/octetstream">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ES6 Features</title>
+  </head>
+  <body>
+    <pre style="font-size: 20px" class="result"></pre>
+    <script src="src/index.js"><+/script>
+  </body>
+</html>
+</script>
+</xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header>
+              <h1>Object Shorthand</h1>
+            </header>
+          </xp-annotations>
+        </div>
+      
+    
+  
+</body></html>
