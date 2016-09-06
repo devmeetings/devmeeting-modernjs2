@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import tasks from '../../data/tasks.json';
+
 export default class TasksData extends React.Component {
 
   static propTypes = {
@@ -8,7 +10,6 @@ export default class TasksData extends React.Component {
     onTasks: PropTypes.func.isRequired
   };
 
-  //3/ Komponent, który używa kontekstu musi to zadeklarować
   static contextTypes = {
     serverUrl: PropTypes.string.isRequired
   };
@@ -17,16 +18,13 @@ export default class TasksData extends React.Component {
     allTasks: [],
   };
 
-  //2/ Wykorzystujemy parametr z kontekstu aby odwołać się do odpowiedniego URLa
   componentDidMount () {
-      fetch(this.context.serverUrl)
-      .then(res => res.json())
-      .then(tasks => {
-        this.setState({
-          allTasks: tasks
-        });
-        this.handleSortingAndSearching(tasks, this.props);
+    setTimeout(() => {
+      this.setState({
+        allTasks: tasks
       });
+      this.handleSortingAndSearching(tasks, this.props);
+    }, 1500);
   }
 
   componentWillReceiveProps (newProps) {

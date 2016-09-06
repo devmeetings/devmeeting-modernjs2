@@ -6,6 +6,7 @@ System.config({
     "json": "/cdn/systemjs/plugin-json/json.js",
     "react": "/cdn/react/15.1.0/react.js",
     "react-dom": "/cdn/react/15.1.0/react-dom.js",
+    "react-router": "/cdn/react-router/2.7.0/ReactRouter.js",
     "classnames": "/cdn/classnames/2.2.5/classnames.js"
   }
 });
